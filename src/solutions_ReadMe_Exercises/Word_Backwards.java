@@ -2,7 +2,7 @@ package solutions_ReadMe_Exercises;
 
 import java.util.Scanner;
 
-public class Odwrocony_Wyraz {
+public class Word_Backwards {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
