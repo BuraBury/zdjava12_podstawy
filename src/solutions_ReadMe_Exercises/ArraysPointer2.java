@@ -1,4 +1,4 @@
-package zadania_readMe_solutions;
+package solutions_ReadMe_Exercises;
 //sumowanie kolejnych par cyfr w tablicy
 
 public class ArraysPointer2 {

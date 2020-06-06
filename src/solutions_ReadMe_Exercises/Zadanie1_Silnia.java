@@ -1,7 +1,6 @@
-package zadania_readMe_solutions;
+package solutions_ReadMe_Exercises;
 
 import java.math.BigInteger;
-import java.util.Scanner;
 
 public class Zadanie1_Silnia {
     public static void main(String[] args) {
