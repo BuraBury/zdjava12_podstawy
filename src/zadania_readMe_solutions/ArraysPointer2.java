@@ -9,14 +9,15 @@ public class ArraysPointer2 {
 
     private static void funnyArray(int[] tab) {
         int start = 0;
-        int second = start + 1;
+        int second = 1;
+        int sum;
 
-        while (second < tab.length - 1) {
-            int sum = tab[start] + tab[second];
+        while (second <= (tab.length - 1)) {
+            sum = tab[start] + tab[second];
+            start++;
+            second++;
             System.out.println(sum);
-            start+=2;
         }
-
 
 
     }
