@@ -19,38 +19,36 @@ public class Zadanie1_Silnia {
 
         BigInteger x = new BigInteger("10");
         System.out.println(powerRecurent(x));
-
-
     }
 
+    //metoda rekurencyjna na silnie
     static BigInteger powerRecurent(BigInteger n) {
         BigInteger one = new BigInteger("1");
         return n.equals(one) ? one : powerRecurent(n.subtract(one)).multiply(n);
     }
 
 
+    //metoda z pętlą for
     static long power(int n) {
-
         long acumulator = 1;
-
         for (int i = 1; i <= n; i++) {
             acumulator *= i;
         }
         return acumulator;
     }
 
+
+    //metoda na silnie z BigInteger i petla for
     static BigInteger bigPower(BigInteger n) {
         BigInteger acumulator = new BigInteger("1");
-
-        //petla for
         int o = n.intValue();
         for (int i = 1; i <= o; i++) {
             acumulator = acumulator.multiply(n);
         }
-
         return acumulator;
     }
 
+    //BigInteger i petla while
     static BigInteger bigPowerWhile(BigInteger n) {
         BigInteger acumulator = new BigInteger("1");
 
@@ -64,6 +62,7 @@ public class Zadanie1_Silnia {
     }
 
 
+    //BigInteger ale ograniczone zakresem int
     static void minInteger(BigInteger a, BigInteger b) {
         int i = a.compareTo(b);
         if (i < 0) {
