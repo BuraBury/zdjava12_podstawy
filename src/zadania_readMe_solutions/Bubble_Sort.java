@@ -5,20 +5,23 @@ import java.util.Arrays;
 public class Bubble_Sort {
     public static void main(String[] args) {
 
-        int[] tab = {2, 0, 4, 10, 3, 1, 5};
-        swap(tab);
-
+        int[] test = {2, 15, 4, 10, 3, 1, 5};
+        boobleSort(test);
     }
 
-    private static void swap(int[] arr) {
+    private static void boobleSort(int[] arr) {
         int value;
 
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    value = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = value;
+
+                int left = j;
+                int right = j + 1;
+
+                if (arr[left] > arr[right]) {
+                    value = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = value;
                 }
             }
         }
