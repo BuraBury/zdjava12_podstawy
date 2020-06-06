@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class CzyPalindrom {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String txt = scanner.next();
-        char[] tab = txt.toCharArray();
+        String numberTxt = scanner.next();
+        char[] numberToArray = numberTxt.toCharArray();
 
-        System.out.println(isPalindrom(tab));
+        System.out.println(isPalindrom(numberToArray));
 
     }
 
