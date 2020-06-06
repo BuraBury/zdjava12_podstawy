@@ -3,7 +3,7 @@ package solutions_ReadMe_Exercises;
 import java.awt.font.ShapeGraphicAttribute;
 import java.util.Scanner;
 
-public class CzyPalindrom {
+public class Is_Palindrome {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String numberTxt = scanner.next();
