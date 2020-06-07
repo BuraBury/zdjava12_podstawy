@@ -13,8 +13,6 @@ public class StringContainerMain {
         costam.add("Bubka", testData);
         costam.remove(2, testData);
 
-
-
         System.out.println(costam.toString());
 
 

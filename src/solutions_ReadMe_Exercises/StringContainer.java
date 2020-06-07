@@ -48,30 +48,55 @@ public class StringContainer {
         this.data = newArray;
     }
 
-    public String[] remove(int index, String[] oldArray) {
-        //usuwanie elementu z tablicy o znanym indeksie
+//    public String[] remove(int index, String[] oldArray) {
+//        //usuwanie elementu z tablicy o znanym indeksie
+//
+//        if (index < 0 || index >= oldArray.length) {
+//            System.out.println("Błąd");
+//            return new String[0];
+//        } else {
+//
+//            String[] newArray = new String[oldArray.length - 1];
+//
+//            for (int i = 0; i < oldArray.length; i++) {
+//
+//                if (i < index) {
+//                    newArray[i] = oldArray[i];
+//                } else if (i == index) {
+//                    //nic nie robimy
+//                } else {
+//                    newArray[i - 1] = oldArray[i];
+//                }
+//            }
+//
+//            return newArray;
+//        }
+//
+//    }
 
-        if (index < 0 || index >= oldArray.length) {
+    public void remove(int index) {
+
+        String[] resultArray = new String[this.data.length - 1];
+        if (index < 0 || index >= this.data.length) {
             System.out.println("Błąd");
-            return new String[0];
 
         } else {
-            String[] newArray = new String[oldArray.length - 1];
 
-            for (int i = 0; i < oldArray.length; i++) {
+            String[] newArray = new String[this.data.length - 1];
+
+            for (int i = 0; i < this.data.length; i++) {
 
                 if (i < index) {
-                    newArray[i] = oldArray[i];
+                    newArray[i] = this.data[i];
                 } else if (i == index) {
                     //nic nie robimy
                 } else {
-                    newArray[i - 1] = oldArray[i];
+                    newArray[i - 1] = this.data[i];
                 }
             }
-
-            return newArray;
         }
 
-    }
+        this.data = resultArray;
 
+    }
 }
