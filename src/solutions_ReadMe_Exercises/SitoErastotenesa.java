@@ -19,6 +19,7 @@ public class SitoErastotenesa {
         showArray(array);
 
     }
+
     public static void getPrimeNumbers(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] % 2 == 0 && arr[i] != 2) {
@@ -31,6 +32,12 @@ public class SitoErastotenesa {
                 arr[i] = 0;
             }
             if (arr[i] % 7 == 0 && arr[i] != 7) {
+                arr[i] = 0;
+            }
+            if (arr[i] % 8 == 0) {
+                arr[i] = 0;
+            }
+            if (arr[i] % 9 == 0) {
                 arr[i] = 0;
             }
         }
