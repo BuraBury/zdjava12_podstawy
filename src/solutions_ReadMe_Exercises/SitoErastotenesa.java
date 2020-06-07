@@ -11,7 +11,7 @@ public class SitoErastotenesa {
         int number = scanner.nextInt();
 
         int[] array = new int[number + 2];
-        for (int i = 1; i <= number; i++) {
+        for (int i = 0; i <= number; i++) {
             array[i] = i;
         }
 
