@@ -1,7 +1,4 @@
 package solutions_ReadMe_Exercises;
-
-import java.util.Arrays;
-
 public class StringContainer {
 
     private String[] data;

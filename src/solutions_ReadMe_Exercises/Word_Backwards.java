@@ -10,15 +10,11 @@ public class Word_Backwards {
 
         char[] wordToArray = word.toCharArray();
         wordBackward(wordToArray);
-
     }
 
     private static void wordBackward(char[] arr) {
-
         for (int i = arr.length - 1; i >= 0; i--) {
             System.out.print(arr[i]);
         }
-
     }
-
 }
