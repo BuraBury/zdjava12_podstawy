@@ -8,18 +8,17 @@ public class LibraryMain {
 
     //metoda menu - wybor opcji funkcją switch:
     public static void menu(Library library) {
-        System.out.println("***** MENU *****");
-        System.out.println();
-        System.out.println("Wybierz: ");
 
-        System.out.println("1. Dostępne książki");
-        System.out.println("2. Wypożycz");
-        System.out.println("3. Oddaj");
-        System.out.println("4. Lista klientów biblioteki");
-        System.out.println("5. Dodaj nowego klienta");
-        System.out.println("6. Usuń klienta");
-        System.out.println("7. Dodaj nową książkę");
-        System.out.println("8. Wyszukaj pozycję");
+        System.out.println("\n***** MENU *****\n\n" +
+                "\tWybierz:\n" +
+                "1. Dostępne książki\n" +
+                "2. Wypożcz\n" +
+                "3. Oddaj\n" +
+                "4. Lista klientów\n" +
+                "5. Dodaj nowego klienta\n" +
+                "6. Usuń klienta\n" +
+                "7. Dodaj nową książkę\n" +
+                "8. Wyszukaj pozycję");
 
         int wybor = scanner.nextInt();
 
