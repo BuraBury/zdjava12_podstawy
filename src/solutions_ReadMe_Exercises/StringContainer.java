@@ -88,8 +88,6 @@ public class StringContainer {
 
                 if (i < index) {
                     newArray[i] = this.data[i];
-                } else if (i == index) {
-                    //nic nie robimy
                 } else {
                     newArray[i - 1] = this.data[i];
                 }
