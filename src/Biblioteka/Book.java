@@ -1,5 +1,7 @@
 package Biblioteka;
 
+import static Biblioteka.LibraryMain.scanner;
+
 public class Book {
 
     private String title;
@@ -10,6 +12,10 @@ public class Book {
 
     private static int idCounter = 0;
 
+    public Book() {
+        this.bookId = idCounter;
+        idCounter++;
+    }
 
     public Book(String title, String author) {
         this.title = title;

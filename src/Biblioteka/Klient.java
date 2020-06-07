@@ -1,11 +1,16 @@
 package Biblioteka;
 
 public class Klient {
+
     private String clientName;
     private int clientID;
 
     private static int freeID = 0;
 
+    public Klient() {
+        this.clientID = freeID;
+        freeID++;
+    }
 
     public Klient(String clientName) {
         this.clientName = clientName;
