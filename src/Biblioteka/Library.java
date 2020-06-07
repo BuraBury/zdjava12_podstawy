@@ -18,6 +18,16 @@ public class Library {
                 '}';
     }
 
+
+//   public void listOfBooks() {
+//        for (Book books : this.book) {
+//            System.out.println(book.toString());
+//        }
+//        int librarySize = books.size();
+//        System.out.println("Ilość książek: " + bookSize + " książek");
+//    }
+
+
     public static void main(String[] args) {
 
         Library library1 = new Library();
