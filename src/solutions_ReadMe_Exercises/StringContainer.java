@@ -77,20 +77,20 @@ public class StringContainer {
     public void remove(int index) {
 
         String[] resultArray = new String[this.data.length - 1];
+
         if (index < 0 || index >= this.data.length) {
             System.out.println("Błąd");
 
         } else {
 
-            String[] newArray = new String[this.data.length - 1];
-
             for (int i = 0; i < this.data.length; i++) {
 
                 if (i < index) {
-                    newArray[i] = this.data[i];
-                } else {
-                    newArray[i - 1] = this.data[i];
+                    resultArray[i] = this.data[i];
+                } else if (i != index) {
+                    resultArray[i - 1] = this.data[i];
                 }
+
             }
         }
 

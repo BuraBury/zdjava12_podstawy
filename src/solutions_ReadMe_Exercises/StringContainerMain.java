@@ -8,10 +8,7 @@ public class StringContainerMain {
         StringContainer costam = new StringContainer(testData);
         StringContainer poem = new StringContainer();
 
-
-        costam.add("Magda", testData);
-        costam.add("Bubka", testData);
-        costam.remove(2, testData);
+        costam.remove(1);
 
         System.out.println(costam.toString());
 
