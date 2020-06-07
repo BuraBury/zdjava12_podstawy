@@ -1,50 +1,64 @@
 package Biblioteka;
 
-import java.util.Arrays;
-
 public class Library {
 
-    Book[] array = new Book[200];
+    private Book[] books;
+    private int firstEmptyIndex;
+    private static final int MAX_BOOKS_COUNT = 100;
 
 
-    public void addBook(Book[] array, Book newBook) {
-        Arrays.fill(array, newBook);
+    public Library() {
+        this.books = new Book[MAX_BOOKS_COUNT];
+        this.firstEmptyIndex = 0;
     }
 
-    @Override
-    public String toString() {
-        return "Library{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+    public void addBook(Book book) {
+        this.books[firstEmptyIndex] = book;
+        firstEmptyIndex++;
     }
 
-
-//   public void listOfBooks() {
-//        for (Book books : this.book) {
-//            System.out.println(book.toString());
-//        }
-//        int librarySize = books.size();
-//        System.out.println("Ilość książek: " + bookSize + " książek");
-//    }
-
-
-    public static void main(String[] args) {
-
-        Library library1 = new Library();
-        Book[] booksOfLibrary1 = new Book[20];
-
-        Book book1 = new Book("Pan Tadeusz", "Adam", "Mickiewicz", true);
-        Book book2 = new Book("Przedwiośnie", "Stefan", "Żeromski", true);
-        Book book3 = new Book("Lalka", "Bolesław", "Prus", true);
-        Book book4 = new Book("Hamlet", "William", "Shakespeare", true);
-
-        library1.addBook(booksOfLibrary1, book1);
-        library1.addBook(booksOfLibrary1, book2);
-        library1.addBook(booksOfLibrary1, book3);
-        library1.addBook(booksOfLibrary1, book4);
-
-
-
+    public void printBook() {
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] == null) {
+                continue;
+            } else {
+                System.out.println(books[i]);
+            }
+        }
     }
+
+    public Book[] searchBook(String searchQuery) {
+
+        Book[] searchResult = new Book[MAX_BOOKS_COUNT];
+
+        int foundBooksCount = 0;
+
+        for (int i = 0; i < this.firstEmptyIndex; i++) {
+            Book bookToCheck = this.books[i];
+
+            boolean authorCheck = bookToCheck.getAuthor().contains(searchQuery);
+            boolean titleCheck = bookToCheck.getTitle().contains(searchQuery);
+
+            if (authorCheck || titleCheck) {
+                searchResult[i] = bookToCheck;
+                foundBooksCount++;
+            }
+        }
+
+        int actualIndex = 0;
+        Book[] searchResultToReturn = new Book[foundBooksCount];
+
+        for (int i = 0; i < searchResult.length; i++) {
+
+            if (searchResult[i] != null) {
+                searchResultToReturn[actualIndex] = searchResult[i];
+                actualIndex++;
+            }
+
+        }
+
+        return searchResultToReturn;
+    }
+
 
 }
