@@ -3,7 +3,7 @@ package solutions_ReadMe_Exercises;
 import java.util.Scanner;
 
 public class Binary {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         //algorytm zmieniania liczb dziesiętnych na binarne:
         /*
@@ -39,15 +39,29 @@ public class Binary {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 
+        //System.out.println(Integer.toBinaryString(number));
+        decimalToBinary(number);
 
 
     }
 
-    String decimalToBinary (int x) {
+    static String decimalToBinary(int x) {
         String result = "";
+        int[] tab = new int[x];
+        int i = 0;
+
 
         //todo zdrob petle while, ktora dzieli x % 2, dopóki x != 0
+
+        while (x != 0) {
+            tab[i++] = x % 2;
+            x /= 2;
+        }
         //todo reszta z dzielenia ma byc przyklejona do zmiennej result
+
+        for (int j = i - 1; j >= 0; j--) {
+            System.out.print(tab[j]);
+        }
 
         return result;
     }
