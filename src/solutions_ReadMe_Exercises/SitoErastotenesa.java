@@ -1,57 +1,91 @@
 package solutions_ReadMe_Exercises;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class SitoErastotenesa {
+
+    private boolean[] tablica;
+    private int[] liczby;
+    private int zakres;
+    private char separator;
+    private int iloscLiczbPierwszych;
+
+    SitoErastotenesa(int zakres) {
+        this.zakres = zakres;
+        this.separator = ' ';
+    }
+
+    SitoErastotenesa() {
+        this.zakres = 0;
+        this.separator = ' ';
+    }
+
+    public int[] wyznacz() {
+        tablica = new boolean[this.zakres + 1];
+
+        for (int i = 2; i < this.zakres; i++) {
+            if (tablica[i] == false) {
+                for (int j = 2; j * i < this.zakres; j++) {
+                    tablica[i * j] = true;
+                }
+            }
+        }
+        for (int w = 2; w < tablica.length; w++) {
+            if (tablica[w] == false) {
+                this.iloscLiczbPierwszych++;
+            }
+        }
+
+        liczby = new int[this.iloscLiczbPierwszych];
+
+        int wskaznik = 0;
+        for (int e = 2; e < tablica.length; e++) {
+            if (tablica[e] == false) {
+                liczby[wskaznik] = e;
+                wskaznik++;
+            }
+        }
+        return liczby;
+    }
+
+    public int getIloscLiczbPierwszych() {
+        return this.iloscLiczbPierwszych;
+    }
+
+    public void wyswietl() {
+        String liczbyPierwsze = "";
+        for (int q = 0; q < liczby.length; q++) {
+            liczbyPierwsze += liczby[q] + "" + separator;
+        }
+        System.out.println(liczbyPierwsze);
+    }
+
+    public int getZakres() {
+        return zakres;
+    }
+
+    public void setZakres(int zakres) {
+        this.zakres = zakres;
+    }
+
+    public char getSeparator() {
+        return separator;
+    }
+
+    public void setSeparator(char separator) {
+        this.separator = separator;
+    }
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
+        SitoErastotenesa sito = new SitoErastotenesa(200);
+        sito.wyznacz();
+        int i = sito.getIloscLiczbPierwszych();
+        System.out.println(i);
+        sito.wyswietl();
 
-        int[] array = new int[number + 2];
-        for (int i = 0; i <= number; i++) {
-            array[i] = i;
-        }
-
-        getPrimeNumbers(array);
-        showArray(array);
 
     }
 
-    public static void getPrimeNumbers(int[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] % 2 == 0 && arr[i] != 2) {
-                arr[i] = 0;
-            }
-            if (arr[i] % 3 == 0 && arr[i] != 3) {
-                arr[i] = 0;
-            }
-            if (arr[i] % 5 == 0 && arr[i] != 5) {
-                arr[i] = 0;
-            }
-            if (arr[i] % 7 == 0 && arr[i] != 7) {
-                arr[i] = 0;
-            }
-            if (arr[i] % 8 == 0) {
-                arr[i] = 0;
-            }
-            if (arr[i] % 9 == 0) {
-                arr[i] = 0;
-            }
-        }
-    }
 
-    public static void showArray(int[] arr) {
-        for (int i = 2; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                continue;
-            } else {
-                System.out.print(arr[i] + " ");
-            }
-        }
-    }
 }
 
 
