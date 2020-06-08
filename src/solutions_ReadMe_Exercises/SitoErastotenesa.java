@@ -22,14 +22,14 @@ public class SitoErastotenesa {
         tablica = new boolean[this.zakres + 1];
 
         for (int i = 2; i < this.zakres; i++) {
-            if (tablica[i] == false) {
+            if (!tablica[i]) {
                 for (int j = 2; j * i < this.zakres; j++) {
                     tablica[i * j] = true;
                 }
             }
         }
         for (int w = 2; w < tablica.length; w++) {
-            if (tablica[w] == false) {
+            if (!tablica[w]) {
                 this.iloscLiczbPierwszych++;
             }
         }
@@ -38,7 +38,7 @@ public class SitoErastotenesa {
 
         int wskaznik = 0;
         for (int e = 2; e < tablica.length; e++) {
-            if (tablica[e] == false) {
+            if (!tablica[e]) {
                 liczby[wskaznik] = e;
                 wskaznik++;
             }
