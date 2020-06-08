@@ -46,7 +46,6 @@ public class Binary {
     }
 
     static void decimalToBinary(int x) {
-        String result = "";
         int[] tab = new int[x];
         int i = 0;
 
