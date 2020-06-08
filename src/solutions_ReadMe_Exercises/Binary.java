@@ -45,24 +45,22 @@ public class Binary {
 
     }
 
-    static String decimalToBinary(int x) {
+    static void decimalToBinary(int x) {
         String result = "";
         int[] tab = new int[x];
         int i = 0;
 
-
         //todo zdrob petle while, ktora dzieli x % 2, dopóki x != 0
 
         while (x != 0) {
-            tab[i++] = x % 2;
+            tab[i] = x % 2;
             x /= 2;
+            i++;
         }
-        //todo reszta z dzielenia ma byc przyklejona do zmiennej result
 
         for (int j = i - 1; j >= 0; j--) {
             System.out.print(tab[j]);
         }
 
-        return result;
     }
 }
