@@ -34,12 +34,15 @@ public class Binary {
           0 |
 
         150(DZ) => 10010110(B)
+
+        WAŻNA FUNKCJA KLASY INTEGER:
+        Integer.toBinaryString(int n);
+
          */
 
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 
-        //System.out.println(Integer.toBinaryString(number));
         decimalToBinary(number);
 
 
