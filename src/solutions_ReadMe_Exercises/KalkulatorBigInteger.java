@@ -47,7 +47,7 @@ public class KalkulatorBigInteger {
     }
 
     public static BigInteger division(BigInteger x, BigInteger y) {
-        if (!y.equals(0)) {
+        if (y.equals(0)) {
             System.out.println("Nie dzielimy przez zero!");
         } else {
             return x.divide(y);
