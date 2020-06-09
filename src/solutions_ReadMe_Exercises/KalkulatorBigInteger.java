@@ -1,6 +1,7 @@
 package solutions_ReadMe_Exercises;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class KalkulatorBigInteger {
@@ -47,12 +48,9 @@ public class KalkulatorBigInteger {
     }
 
     public static BigInteger division(BigInteger x, BigInteger y) {
-        if (y.equals(0)) {
-            System.out.println("Nie dzielimy przez zero!");
-        } else {
+        if (y.intValue() != 0) {
             return x.divide(y);
-        }
-        return null;
+        } else return null;
     }
 
     public static void main(String[] args) {
