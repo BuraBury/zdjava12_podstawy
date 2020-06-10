@@ -1,7 +1,6 @@
 package solutions_ReadMe_Exercises;
 
 import java.math.BigInteger;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class KalkulatorBigInteger {
@@ -9,6 +8,8 @@ public class KalkulatorBigInteger {
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input numbers:");
+
+
         System.out.println("x = ");
         String n = scanner.next();
         BigInteger x = new BigInteger(n);
@@ -32,11 +33,22 @@ public class KalkulatorBigInteger {
             case 3 -> System.out.println(multiplication(x, y));
 
             case 4 -> System.out.println(division(x, y));
+
         }
     }
 
     public static BigInteger add(BigInteger x, BigInteger y) {
         return x.add(y);
+    }
+
+    public static BigInteger add(BigInteger... args) {
+        BigInteger sum = null;
+
+        for (BigInteger arg : args) {
+            sum.add(arg);
+        }
+
+        return sum;
     }
 
     public static BigInteger subtract(BigInteger x, BigInteger y) {
@@ -57,5 +69,14 @@ public class KalkulatorBigInteger {
 
         menu();
 
+        /*
+        public static int add(int... args){
+        for (int arg : args) {
+            sum += arg;
+        }
+        System.out.println("int " + sum);
+        return sum;
+    }
+         */
     }
 }
