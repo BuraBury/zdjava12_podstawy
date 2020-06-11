@@ -18,7 +18,8 @@ public class LibraryMain {
                 "5. Dodaj nowego klienta\n" +
                 "6. Usuń klienta\n" +
                 "7. Dodaj nową książkę\n" +
-                "8. Wyszukaj pozycję");
+                "8. Usuń książkę\n" +
+                "9. Wyszukaj pozycję");
 
         int wybor = scanner.nextInt();
 
@@ -30,6 +31,7 @@ public class LibraryMain {
             break;
             case 2: {
                 //wypozycz
+                library.getBook();
             }
             break;
             case 3: {
@@ -48,6 +50,7 @@ public class LibraryMain {
             break;
             case 6: {
                 //usun klienta
+                library.removeClient();
             }
             break;
             case 7: {
@@ -56,18 +59,22 @@ public class LibraryMain {
             }
             break;
             case 8: {
+                //usuwanie ksiazki po autorze
+                library.removeBook();
+            }
+            case 9: {
                 //wyszukaj pozycje po frazie
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Wpisz frazę");
-                String fraza = scanner.nextLine();
-
-                library.searchBook(fraza);
-
-                Book[] searchResult = library.searchBook(fraza);
-
-                for (Book value : searchResult) {
-                    System.out.println(value);
-                }
+//                Scanner scanner = new Scanner(System.in);
+//                System.out.println("Wpisz frazę");
+//                String fraza = scanner.nextLine();
+//
+//                library.searchBook(fraza);
+//
+//                Book[] searchResult = library.searchBook(fraza);
+//
+//                for (Book value : searchResult) {
+//                    System.out.println(value);
+//                }
 
 
             }

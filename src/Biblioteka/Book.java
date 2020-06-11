@@ -1,7 +1,4 @@
 package Biblioteka;
-
-import static Biblioteka.LibraryMain.scanner;
-
 public class Book {
 
     private String title;
@@ -51,10 +48,9 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", bookId=" + bookId +
-                '}';
+        return "Title: " + this.title +
+                "\nAuthor: " + this.author +
+                "\nBook ID: " + this.bookId +
+                "\n";
     }
 }

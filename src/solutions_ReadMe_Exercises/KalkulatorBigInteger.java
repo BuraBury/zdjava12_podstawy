@@ -47,7 +47,7 @@ public class KalkulatorBigInteger {
         for (BigInteger arg : args) {
             sum.add(arg);
         }
-
+        
         return sum;
     }
 
