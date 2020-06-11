@@ -1,18 +1,18 @@
 package Biblioteka;
 
-public class Klient {
+public class Client {
 
     private String clientName;
     private int clientID;
 
     private static int freeID = 0;
 
-    public Klient() {
+    public Client() {
         this.clientID = freeID;
         freeID++;
     }
 
-    public Klient(String clientName) {
+    public Client(String clientName) {
         this.clientName = clientName;
         this.clientID = freeID;
         freeID++;
@@ -20,10 +20,9 @@ public class Klient {
 
     @Override
     public String toString() {
-        return "Klient{" +
-                "clientName='" + clientName + '\'' +
-                ", clientID=" + clientID +
-                '}';
+        return
+                "\nImie: " + getClientName() +
+                "\nID: " + getClientID();
     }
 
     public static int getFreeID() {
@@ -31,7 +30,7 @@ public class Klient {
     }
 
     public static void setFreeID(int freeID) {
-        Klient.freeID = freeID;
+        Client.freeID = freeID;
     }
 
     public int getClientID() {

@@ -31,7 +31,7 @@ public class LibraryMain {
             break;
             case 2: {
                 //wypozycz
-                library.getBook();
+                library.borrowBook();
             }
             break;
             case 3: {
@@ -75,13 +75,10 @@ public class LibraryMain {
 //                for (Book value : searchResult) {
 //                    System.out.println(value);
 //                }
-
-
             }
             break;
         }
     }
-
 
     public static void main(String[] args) {
 
@@ -99,16 +96,16 @@ public class LibraryMain {
         library.addBook(book2);
 
         //stworzenie instancji klienta 'klient'
-        Klient klient = new Klient("Paulina Bury");
-        Klient klient1 = new Klient("Jakub Nagiet");
-        Klient klient2 = new Klient("Bercik Albert Gwidon Bercicky");
-        Klient klient3 = new Klient("Artur Nawałka");
+        Client client = new Client("Paulina Bury");
+        Client client1 = new Client("Jakub Nagiet");
+        Client client2 = new Client("Bercik Albert Gwidon Bercicky");
+        Client client3 = new Client("Artur Nawałka");
 
         //dodanie klientow do biblioteki
-        library.addKlient(klient);
-        library.addKlient(klient1);
-        library.addKlient(klient2);
-        library.addKlient(klient3);
+        library.addKlient(client);
+        library.addKlient(client1);
+        library.addKlient(client2);
+        library.addKlient(client3);
 
         //wywolanie metody menu();
         while (true) {

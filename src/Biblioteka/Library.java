@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Library {
 
     private Book[] books;
-    private Klient[] klients;
+    private Client[] clients;
     private int firstEmptyIndex;
     private int firstEmptyId;
     private static final int MAX_BOOKS_COUNT = 100;
@@ -15,7 +15,7 @@ public class Library {
     public Library() {
         this.books = new Book[MAX_BOOKS_COUNT];
         this.firstEmptyIndex = 0;
-        this.klients = new Klient[MAX_KLIENTS_COUNT];
+        this.clients = new Client[MAX_KLIENTS_COUNT];
         this.firstEmptyId = 0;
     }
 
@@ -53,51 +53,58 @@ public class Library {
         return books;
     }
 
-    public void addKlient(Klient klient) {
-        this.klients[firstEmptyId] = klient;
+    public void addKlient(Client client) {
+        this.clients[firstEmptyId] = client;
         firstEmptyId++;
     }
 
     public void addKlient() {
-        Klient newOne = new Klient();
+        Client newOne = new Client();
         System.out.println("Podaj imię i nazwisko nowego klienta: ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         newOne.setClientName(name);
 
-        this.klients[firstEmptyId] = newOne;
+        this.clients[firstEmptyId] = newOne;
         firstEmptyId++;
     }
 
-    public Klient[] removeClient() {
+    public Client[] removeClient() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj ID klienta do usunięcia: ");
         int id = scanner.nextInt();
+        int a = 0;
 
-        for (int i = 0; i < klients.length; i++) {
+        for (int i = 0; i < clients.length; i++) {
             if (id == i) {
-                klients[i] = null;
+                clients[i] = null;
             }
         }
-        return klients;
+        for (int i = 0; i < clients.length; i++) {
+            if (clients[i] != null) {
+                clients[i].setClientID(a);
+                a++;
+            }
+        }
+        return clients;
     }
 
     public void printBooks() {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i] == null || books[i].getTitle().contains("WYPOŻYCZONA")) {
+        for (Book book : books) {
+            if (book == null || book.getTitle().contains("WYPOŻYCZONA")) {
                 continue;
             } else {
-                System.out.println(books[i]);
+                System.out.println(book);
             }
         }
     }
 
     public void printClients() {
-        for (int i = 0; i < klients.length; i++) {
-            if (klients[i] == null) {
+        for (Client client : clients) {
+            if (client == null) {
                 continue;
             } else {
-                System.out.println(klients[i]);
+                System.out.println(client);
             }
         }
     }
@@ -123,10 +130,10 @@ public class Library {
         int actualIndex = 0;
         Book[] searchResultToReturn = new Book[foundBooksCount];
 
-        for (int i = 0; i < searchResult.length; i++) {
+        for (Book book : searchResult) {
 
-            if (searchResult[i] != null) {
-                searchResultToReturn[actualIndex] = searchResult[i];
+            if (book != null) {
+                searchResultToReturn[actualIndex] = book;
                 actualIndex++;
             }
 
@@ -135,7 +142,7 @@ public class Library {
         return searchResultToReturn;
     }
 
-    public Book[] getBook() {
+    public Book[] borrowBook() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj ID książki do wypożyczenia");
         int idBook = scanner.nextInt();
@@ -146,11 +153,10 @@ public class Library {
 
         for (int i = 0; i < books.length; i++) {
             if (idBook == i) {
-                books[i].setTitle(books[i].getTitle() + "\nPOZYCJA WYPOŻYCZONA \n" + "Osoba wypożyczająca: " + klients[idClient].getClientName());
+                books[i].setTitle(books[i].getTitle() + "\nPOZYCJA WYPOŻYCZONA \n" + "Osoba wypożyczająca: " + clients[idClient].getClientName());
                 borrowedBooks[i] = books[i];
             }
         }
-
         System.out.println("Wypozyczone pozycje: ");
         for (Book borrowedBook : borrowedBooks) {
             if (borrowedBook == null) {
