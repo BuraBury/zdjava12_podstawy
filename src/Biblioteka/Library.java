@@ -50,6 +50,13 @@ public class Library {
                 books[i] = null;
             }
         }
+        int a = 0;
+        for (Book book : books) {
+            if (book != null) {
+                book.setBookId(a);
+                a++;
+            }
+        }
         return books;
     }
 
@@ -80,9 +87,9 @@ public class Library {
                 clients[i] = null;
             }
         }
-        for (int i = 0; i < clients.length; i++) {
-            if (clients[i] != null) {
-                clients[i].setClientID(a);
+        for (Client client : clients) {
+            if (client != null) {
+                client.setClientID(a);
                 a++;
             }
         }
