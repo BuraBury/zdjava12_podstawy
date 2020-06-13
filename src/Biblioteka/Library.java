@@ -9,13 +9,13 @@ public class Library {
     private int firstEmptyIndex;
     private int firstEmptyId;
     private static final int MAX_BOOKS_COUNT = 100;
-    private static final int MAX_KLIENTS_COUNT = 100;
+    private static final int MAX_CLIENTS_COUNT = 100;
 
 
     public Library() {
         this.books = new Book[MAX_BOOKS_COUNT];
         this.firstEmptyIndex = 0;
-        this.clients = new Client[MAX_KLIENTS_COUNT];
+        this.clients = new Client[MAX_CLIENTS_COUNT];
         this.firstEmptyId = 0;
     }
 
