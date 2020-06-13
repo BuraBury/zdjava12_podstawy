@@ -8,7 +8,7 @@ public class Library {
     private Client[] clients;
     private int firstEmptyIndex;
     private int firstEmptyId;
-    private static final int MAX_BOOKS_COUNT = 101;
+    private static final int MAX_BOOKS_COUNT = 100;
     private static final int MAX_CLIENTS_COUNT = 100;
 
 
