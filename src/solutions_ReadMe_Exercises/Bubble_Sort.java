@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class Bubble_Sort {
     public static void main(String[] args) {
 
-        int[] test = {2, 15, 4, 10, 3, 1, 5};
+        String z = "1000";
+        int[] test = {300, -2, 0, 65, 34, 2, 1, 2, Integer.parseInt(z)};
         boobleSort(test);
     }
 
@@ -20,18 +21,17 @@ public class Bubble_Sort {
     }
 
     private static void boobleSort(int[] arr) {
-    // int value;
+        // int value;
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
 
-                int left = j;
                 int right = j + 1;
 
-                if (arr[left] > arr[right]) {
+                if (arr[j] > arr[right]) {
 //                    value = arr[left];
 //                    arr[left] = arr[right];
 //                    arr[right] = value;
-                    swap(arr, left, right);
+                    swap(arr, j, right);
                 }
             }
         }

@@ -45,6 +45,8 @@ public class Binary {
 
         decimalToBinary(number);
 
+        System.out.println("\n" + Integer.toBinaryString(number));
+
 
     }
 
@@ -52,7 +54,7 @@ public class Binary {
         int[] tab = new int[x];
         int i = 0;
 
-        //todo zdrob petle while, ktora dzieli x % 2, dopóki x != 0
+        //todo zdrób pętlę while, która dzieli x % 2, dopóki x != 0
 
         while (x != 0) {
             tab[i] = x % 2;
@@ -63,6 +65,5 @@ public class Binary {
         for (int j = i - 1; j >= 0; j--) {
             System.out.print(tab[j]);
         }
-
     }
 }
