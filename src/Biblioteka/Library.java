@@ -2,6 +2,8 @@ package Biblioteka;
 
 import java.util.Scanner;
 
+import static Biblioteka.LibraryMain.*;
+
 public class Library {
 
     private Book[] books;
@@ -106,6 +108,7 @@ public class Library {
         }
     }
 
+
     public void printClients() {
         for (Client client : clients) {
             if (client == null) {
@@ -149,12 +152,12 @@ public class Library {
         return searchResultToReturn;
     }
 
+
     public Book[] borrowBook() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj ID książki do wypożyczenia");
-        int idBook = scanner.nextInt();
-        System.out.println("Podaj ID klienta");
-        int idClient = scanner.nextInt();
+        inputBookId_info();
+        int idBook = input();
+        inputClientId_info();
+        int idClient = input();
 
         Book[] borrowedBooks = new Book[MAX_BOOKS_COUNT];
 
