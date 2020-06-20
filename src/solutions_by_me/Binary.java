@@ -1,4 +1,4 @@
-package solutions_ReadMe_Exercises;
+package solutions_by_me;
 
 import java.util.Scanner;
 
@@ -53,8 +53,6 @@ public class Binary {
     static void decimalToBinary(int x) {
         int[] tab = new int[x];
         int i = 0;
-
-        //todo zdrób pętlę while, która dzieli x % 2, dopóki x != 0
 
         while (x != 0) {
             tab[i] = x % 2;

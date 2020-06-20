@@ -1,6 +1,5 @@
-package solutions_ReadMe_Exercises;
+package solutions_by_me;
 
-import java.awt.font.ShapeGraphicAttribute;
 import java.util.Scanner;
 
 public class Is_Palindrome {

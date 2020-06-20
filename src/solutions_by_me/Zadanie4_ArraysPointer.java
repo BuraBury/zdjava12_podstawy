@@ -1,4 +1,4 @@
-package solutions_ReadMe_Exercises;
+package solutions_by_me;
 
 public class Zadanie4_ArraysPointer {
     public static void main(String[] args) {
